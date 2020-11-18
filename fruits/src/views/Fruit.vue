@@ -1,5 +1,12 @@
 <template>
   <div class="container">
+    <router-link to="/">
+      <el-button
+        icon="el-icon-back"
+        class="go-back-button search_button"
+        circle
+      />
+    </router-link>
     <el-row class="fixed-height">
       <el-col :span="24">
         <vue-typed-js
@@ -58,6 +65,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import capitalize from '@/filters/capitalize';
 
 export default {
   name: 'Fruit',
@@ -75,11 +83,6 @@ export default {
 
   methods: {
     ...mapActions(['fetchFruit']),
-    capitalize(value) {
-      if (!value) return '';
-      const str = value.toString();
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    },
   },
 
   created() {
@@ -89,7 +92,7 @@ export default {
   watch: {
     fruit() {
       document.getElementById('circle').style.setProperty('--background-color', this.fruit.color);
-      this.title = this.capitalize(this.fruit.name);
+      this.title = capitalize(this.fruit.name);
       this.title += '.';
       this.componentKey += 1;
     },
@@ -98,6 +101,12 @@ export default {
 </script>
 
 <style>
+.go-back-button {
+  position: absolute;
+  z-index: 1;
+  left: 11%;
+}
+
 .fruit-desc {
   margin-left: 2vw;
   text-align: left;

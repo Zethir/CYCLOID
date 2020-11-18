@@ -3,6 +3,7 @@ import ElementUI from 'element-ui';
 import VueTypedJs from 'vue-typed-js';
 import locale from 'element-ui/lib/locale/lang/en';
 import UUID from 'vue-uuid';
+import capitalize from '@/filters/capitalize';
 import App from './App.vue';
 import router from './router';
 import store from './store';
@@ -12,6 +13,7 @@ Vue.config.productionTip = false;
 Vue.use(ElementUI, { locale });
 Vue.use(VueTypedJs);
 Vue.use(UUID);
+Vue.filter('capitalize', capitalize);
 
 new Vue({
   router,

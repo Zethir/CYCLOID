@@ -51,7 +51,6 @@
 </template>
 
 <script>
-import { capitalize } from 'vuetensils/src/filters';
 
 export default {
   name: 'FruitCard',
@@ -65,10 +64,6 @@ export default {
       default: 0,
       type: Number,
     },
-  },
-
-  filters: {
-    capitalize,
   },
 
   methods: {
@@ -153,7 +148,7 @@ export default {
 
 .search_button:hover {
   color: #b5b4b4 !important;
-  border-color: bfbfbf !important;
+  border-color: #bfbfbf !important;
   background-color: #fff !important;
 }
 </style>
