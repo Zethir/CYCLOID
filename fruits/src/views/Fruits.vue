@@ -75,8 +75,12 @@ export default {
   width: 100%;
 }
 
-.el-fade-in-enter-active, .el-fade-in-leave-active {
+.el-fade-in-enter-active {
   transition: all 3s ease !important;
+}
+
+.el-face-in-leave-active {
+  transition: all 1s ease !important;
 }
 
 .el-fade-in-linear-enter-active, .el-fade-in-linear-leave-active {
